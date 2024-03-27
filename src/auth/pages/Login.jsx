@@ -6,11 +6,13 @@ export const Login = () => {
   
   const { login } = useContext(AuthContext)
 
+  const lastPath = localStorage.getItem('lastPath') || '/'
+
   const navigate = useNavigate()
 
   const onLogin = () => {
     login('Cristobal Torres')
-    navigate('/', {
+    navigate(lastPath, {
       replace: true
     })
   }
